@@ -13,19 +13,19 @@
       --text: #edf4ff;
       --muted: #96a7c0;
       --accent: #5bff9b;
-      --border: rgba(140,170,210,.19);
-      --shadow: rgba(0,0,0,.25);
+      --border: rgba(140, 170, 210, 0.19);
+      --shadow: rgba(0, 0, 0, 0.25);
     }
 
     body.light-mode {
       --bg: #f2f6fb;
-      --surface: #fff;
+      --surface: #ffffff;
       --surface-2: #e7eef7;
       --text: #102036;
       --muted: #53647b;
       --accent: #078b4b;
-      --border: rgba(30,60,90,.16);
-      --shadow: rgba(20,40,70,.08);
+      --border: rgba(30, 60, 90, 0.16);
+      --shadow: rgba(20, 40, 70, 0.08);
     }
 
     * {
@@ -40,7 +40,7 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
-      transition: background .3s, color .3s;
+      transition: background 0.3s, color 0.3s;
       overflow-x: hidden;
     }
 
@@ -80,7 +80,7 @@
     .logo {
       font-size: 1.08rem;
       font-weight: 800;
-      letter-spacing: -.5px;
+      letter-spacing: -0.5px;
     }
 
     .logo span,
@@ -103,9 +103,9 @@
 
     .nav-links a {
       color: var(--muted);
-      font-size: .82rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      transition: color .25s;
+      transition: color 0.25s;
     }
 
     .nav-links a:hover {
@@ -120,7 +120,7 @@
       border-radius: 30px;
       cursor: pointer;
       white-space: nowrap;
-      transition: transform .2s, border-color .2s;
+      transition: transform 0.2s, border-color 0.2s;
     }
 
     .theme-toggle:hover {
@@ -128,7 +128,7 @@
       border-color: var(--accent);
     }
 
-    /* HERO */
+    /* HERO SECTION */
 
     .hero {
       min-height: 620px;
@@ -146,7 +146,7 @@
       height: 450px;
       border-radius: 50%;
       background: var(--accent);
-      opacity: .07;
+      opacity: 0.07;
       filter: blur(100px);
       top: 10px;
       right: -150px;
@@ -155,7 +155,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.3fr .7fr;
+      grid-template-columns: 1.3fr 0.7fr;
       align-items: center;
       gap: 45px;
       position: relative;
@@ -163,7 +163,7 @@
 
     .eyebrow {
       color: var(--accent);
-      font-size: .78rem;
+      font-size: 0.78rem;
       letter-spacing: 3px;
       font-weight: 800;
       margin-bottom: 18px;
@@ -201,11 +201,11 @@
       gap: 8px;
       padding: 12px 17px;
       border-radius: 8px;
-      font-size: .83rem;
+      font-size: 0.83rem;
       font-weight: 800;
       text-align: center;
-      transition: transform .25s, background .25s,
-        border-color .25s, color .25s;
+      transition: transform 0.25s, background 0.25s,
+        border-color 0.25s, color 0.25s;
     }
 
     .btn:hover {
@@ -229,7 +229,7 @@
       color: var(--accent);
     }
 
-    /* FIGMA PROJECTS */
+    /* TWO FIGMA PROJECT COLUMNS */
 
     .figma-section {
       margin-top: 10px;
@@ -252,8 +252,8 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 14px;
-      transition: transform .3s, border-color .3s,
-        box-shadow .3s;
+      transition: transform 0.3s, border-color 0.3s,
+        box-shadow 0.3s;
     }
 
     .figma-card:hover {
@@ -264,7 +264,7 @@
 
     .figma-number {
       color: var(--accent);
-      font-size: .72rem;
+      font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 2px;
       margin-bottom: 15px;
@@ -283,7 +283,7 @@
 
     .figma-card p {
       color: var(--muted);
-      font-size: .82rem;
+      font-size: 0.82rem;
       line-height: 1.6;
       margin-bottom: 18px;
     }
@@ -296,9 +296,8 @@
 
     .profile-area {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      min-width: 0;
     }
 
     .profile-card {
@@ -309,83 +308,67 @@
       border: 1px solid var(--border);
       border-radius: 20px;
       box-shadow: 0 25px 70px var(--shadow);
-      overflow: hidden;
     }
 
     .photo-frame {
       width: 100%;
       aspect-ratio: 4 / 5;
-      position: relative;
-      overflow: hidden;
       background: var(--surface-2);
       border: 1px dashed var(--accent);
       border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
     }
 
     .photo-frame img {
-      position: absolute;
-      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
-      display: block;
+      display: none;
+      position: absolute;
+      inset: 0;
     }
 
     .photo-placeholder {
-      position: absolute;
-      inset: 0;
       padding: 20px;
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
       color: var(--muted);
-      background: var(--surface);
-      z-index: 2;
     }
 
     .photo-icon {
       font-size: 3rem;
+      display: block;
       margin-bottom: 8px;
     }
 
     .photo-placeholder strong {
-      display: block;
       color: var(--text);
+      display: block;
       margin-bottom: 5px;
+    }
+
+    .upload-label {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 9px 13px;
+      border-radius: 6px;
+      color: #06130c;
+      background: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
     }
 
     #photoUpload {
       display: none;
     }
 
-    .change-photo-btn {
-      margin-top: 12px;
-      width: 100%;
-      padding: 8px;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      color: var(--text);
-      border-radius: 6px;
-      font-size: .78rem;
-      font-weight: 700;
-      cursor: pointer;
-      text-align: center;
-      display: block;
-      transition: border-color .2s;
-    }
-
-    .change-photo-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
     .profile-caption {
       padding-top: 17px;
-      text-align: center;
-      overflow-wrap: anywhere;
     }
 
     .profile-caption strong {
@@ -395,7 +378,7 @@
 
     .profile-caption span {
       color: var(--accent);
-      font-size: .8rem;
+      font-size: 0.8rem;
     }
 
     /* GENERAL SECTIONS */
@@ -407,7 +390,7 @@
 
     .section-label {
       color: var(--accent);
-      font-size: .76rem;
+      font-size: 0.76rem;
       letter-spacing: 2.5px;
       font-weight: 800;
       margin-bottom: 12px;
@@ -456,7 +439,7 @@
 
     .info-card p {
       color: var(--muted);
-      font-size: .92rem;
+      font-size: 0.92rem;
     }
 
     .status-line {
@@ -465,7 +448,7 @@
       gap: 10px;
       margin-top: 18px;
       color: var(--accent);
-      font-size: .85rem;
+      font-size: 0.85rem;
       font-weight: 700;
     }
 
@@ -475,6 +458,85 @@
       border-radius: 50%;
       background: var(--accent);
       box-shadow: 0 0 12px var(--accent);
+    }
+
+    /* CASE STUDIES */
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .case-card {
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: transform 0.3s, border-color 0.3s,
+        box-shadow 0.3s;
+    }
+
+    .case-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--accent);
+      box-shadow: 0 18px 45px var(--shadow);
+    }
+
+    .case-number {
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .case-icon {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+
+    .case-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .case-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+
+    .case-card h4 {
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .case-list {
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 22px;
+    }
+
+    .case-list li {
+      margin-bottom: 6px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      color: var(--accent);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 5px 9px;
+      font-size: 0.73rem;
+      font-weight: 700;
     }
 
     /* SKILLS */
@@ -490,7 +552,7 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      transition: border-color .25s, transform .25s;
+      transition: border-color 0.25s, transform 0.25s;
     }
 
     .skill-card:hover {
@@ -510,7 +572,7 @@
 
     .skill-card p {
       color: var(--muted);
-      font-size: .86rem;
+      font-size: 0.86rem;
     }
 
     /* CONTACT */
@@ -548,7 +610,1175 @@
       border-top: 1px solid var(--border);
       padding: 25px 0;
       color: var(--muted);
-      font-size: .8rem;
+      font-size: 0.8rem;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE DESIGN */
+
+    @media (max-width: 1000px) {
+      .hero-grid {
+        grid-template-columns: 1fr 0.7fr;
+        gap: 25px;
+      }
+
+      .figma-grid {
+        gap: 10px;
+      }
+
+      .figma-card {
+        padding: 16px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .profile-area {
+        justify-content: flex-start;
+      }
+
+      .profile-card {
+        max-width: 300px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .contact-panel {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 32px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      .nav-right {
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        font-size: 0.7rem;
+      }
+
+      .theme-toggle {
+        padding: 7px 10px;
+        font-size: 0.76rem;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.8px;
+      }
+
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .content-section {
+        padding: 70px 0;
+      }
+
+      .contact-panel {
+        padding: 25px;
+      }
+
+      .footer-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .figma-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">SERVANDO<span>.</span></a>
+
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#cases">CASE STUDIES</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+
+        <button class="theme-toggle" id="themeToggle" type="button">
+          ☀️ Light
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HOME / HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+          <p class="eyebrow">CYBERSECURITY PORTFOLIO / 2026</p>
+
+          <h1>
+            Servando<br>
+            Bebat <span>III.</span>
+          </h1>
+
+          <p class="hero-description">
+            Exploring the digital world through cybersecurity,
+            threat awareness, network defense, and secure technology.
+            Welcome to my personal portfolio.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#cases" class="btn btn-primary">
+              Explore my case studies ↘
+            </a>
+          </div>
+
+          <!-- FIGMA PROJECT CARDS -->
+          <div class="figma-section">
+            <p class="eyebrow">MY FIGMA PROJECTS</p>
+
+            <div class="figma-grid">
+
+              <article class="figma-card">
+                <div class="figma-number">PROJECT / 01</div>
+                <div class="figma-icon">🎨</div>
+                <h3>OVHcloud</h3>
+                <p>Explore my OVHcloud Figma design project.</p>
+
+                <a
+                  href="https://www.figma.com/proto/8VHO9jycjYFAc0Vz8q765w/Untitled?node-id=2-2&t=Uw6mEiS4kwbYdHBq-1"
+                  class="btn btn-outline"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  View Figma ↗
+                </a>
+              </article>
+
+              <article class="figma-card">
+                <div class="figma-number">PROJECT / 02</div>
+                <div class="figma-icon">🖥️</div>
+                <h3>SQUARESPACE</h3>
+                <p>Explore my Squarespace Figma design project.</p>
+
+                <a
+                  href="https://www.figma.com/proto/ZZxF8nvVykU2VvXhGQb4LC/Figma-2?node-id=0-1&t=Uw6mEiS4kwbYdHBq-1"
+                  class="btn btn-outline"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  View Figma ↗
+                </a>
+              </article>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- PROFILE PHOTO UPLOAD -->
+        <div class="profile-area reveal">
+          <div class="profile-card">
+
+            <div class="photo-frame">
+              <img
+  id="profileImage"
+  src="c:\Users\Administrator\Downloads\61a27042-b737-4c49-a540-4b092d7a1f8a.jpg"
+  alt="Servando Bebat III"
+  style="display:block; width:100%; height:100%; object-fit:cover;"
+
+
+              <div class="photo-placeholder" id="photoPlaceholder">
+                <span class="photo-icon">👤</span>
+                <strong>Your Photo Here</strong>
+                <p>Upload your picture to personalize your portfolio.</p>
+
+                <label class="upload-label" for="photoUpload">
+                  + Upload Photo
+                </label>
+
+                <input
+                  type="file"
+                  id="photoUpload"
+                  accept="image/*">
+              </div>
+            </div>
+
+            <div class="profile-caption">
+              <strong>Servando Bebat III</strong>
+              <span>Cybersecurity Enthusiast</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="content-section" id="about">
+      <div class="container">
+
+        <div class="section-label">01 / ABOUT</div>
+
+        <div class="about-grid">
+          <div class="reveal">
+            <h2 class="section-title">Protecting the digital world.</h2>
+
+            <div class="about-copy">
+              <p>
+                Hello! I'm Servando Bebat III. I'm interested in
+                cybersecurity and learning how to protect systems,
+                networks, and people from digital threats.
+              </p>
+
+              <p>
+                This portfolio showcases cybersecurity topics,
+                case study examples, and skills that I'm developing
+                as I continue learning about digital security.
+              </p>
+            </div>
+          </div>
+
+          <div class="info-card reveal">
+            <h3>My Mission</h3>
+
+            <p>
+              To build my cybersecurity knowledge, understand common
+              security risks, and promote safer digital practices
+              through continuous learning.
+            </p>
+
+            <div class="status-line">
+              <span class="status-dot"></span>
+              Learning. Building. Securing.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section class="content-section" id="cases">
+      <div class="container">
+
+        <div class="section-label">02 / CASE STUDIES</div>
+
+        <h2 class="section-title reveal">Security in action.</h2>
+
+        <p class="section-description reveal">
+          Two cybersecurity case study examples exploring common
+          digital threats, possible impacts, and practical defenses.
+        </p>
+
+        <div class="case-grid">
+
+          <article class="case-card reveal">
+            <div class="case-number">CASE STUDY / 01</div>
+            <div class="case-icon">🛡️</div>
+
+            <h3>Network Intrusion Detection</h3>
+
+            <p>
+              Understanding how suspicious network activity can
+              be identified and investigated before it causes
+              significant damage.
+            </p>
+
+            <h4>Key Objectives</h4>
+
+            <ul class="case-list">
+              <li>Recognize unusual network traffic.</li>
+              <li>Understand intrusion detection systems (IDS).</li>
+              <li>Explore monitoring and incident response.</li>
+              <li>Recommend stronger network security practices.</li>
+            </ul>
+
+            <div class="tag-list">
+              <span class="tag">Network Security</span>
+              <span class="tag">IDS</span>
+              <span class="tag">Threat Detection</span>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-number">CASE STUDY / 02</div>
+            <div class="case-icon">🎣</div>
+
+            <h3>Phishing Awareness &amp; Defense</h3>
+
+            <p>
+              Examining how fraudulent emails and websites trick
+              users into revealing personal information or
+              account credentials.
+            </p>
+
+            <h4>Key Objectives</h4>
+
+            <ul class="case-list">
+              <li>Identify suspicious links and email senders.</li>
+              <li>Recognize common social engineering tactics.</li>
+              <li>Promote multi-factor authentication.</li>
+              <li>Encourage safe reporting of suspicious messages.</li>
+            </ul>
+
+            <div class="tag-list">
+              <span class="tag">Phishing</span>
+              <span class="tag">Awareness</span>
+              <span class="tag">Account Security</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="content-section" id="skills">
+      <div class="container">
+
+        <div class="section-label">03 / SKILLS</div>
+
+        <h2 class="section-title reveal">My security toolkit.</h2>
+
+        <p class="section-description reveal">
+          Areas of interest and knowledge I'm building as I
+          continue exploring cybersecurity.
+        </p>
+
+        <div class="skills-grid">
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">🔐</div>
+            <h3>Cybersecurity Fundamentals</h3>
+            <p>Learning security principles, common threats, and ways to protect digital information.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">🌐</div>
+            <h3>Network Security</h3>
+            <p>Exploring network monitoring, traffic analysis, and basic network defense.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">🕵️</div>
+            <h3>Threat Awareness</h3>
+            <p>Understanding phishing, social engineering, suspicious links, and online risks.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">💻</div>
+            <h3>Web Technology</h3>
+            <p>Practicing HTML, CSS, and JavaScript to create and customize web pages.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">🧩</div>
+            <h3>Problem Solving</h3>
+            <p>Breaking down technical problems and exploring practical solutions.</p>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-icon">📚</div>
+            <h3>Continuous Learning</h3>
+            <p>Developing my knowledge through research, practice, and cybersecurity projects.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="content-section" id="contact">
+      <div class="container">
+
+        <div class="section-label">04 / CONTACT</div>
+
+        <div class="contact-panel reveal">
+          <div>
+            <h2 class="section-title">Let's Connect.</h2>
+
+            <p>
+              Have a question or want to connect? Reach out to me
+              through Instagram, email, or GitHub.
+            </p>
+          </div>
+
+          <div class="contact-buttons">
+
+            <a
+              href="https://www.instagram.com/thirdybebat00/"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer">
+              Instagram ↗
+            </a>
+
+            <a
+              href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=thirdybebat5%40gmail.com"
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer">
+              Email Me ↗
+            </a>
+
+            <!-- Figma BUTTON LINKED TO YOUR GITHUB -->
+            <a
+              href="https://github.com/servandobebat"
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer">
+              Figma ↗
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-content">
+      <p>© 2026 Servando Bebat III. All rights reserved.</p>
+      <p>Designed with <span>●</span> and a cybersecurity mindset.</p>
+    </div>
+  </footer>
+
+  <script>
+    // DARK MODE / LIGHT MODE
+    const themeToggle = document.getElementById("themeToggle");
+
+    themeToggle.addEventListener("click", function () {
+      document.body.classList.toggle("light-mode");
+
+      const isLight =
+        document.body.classList.contains("light-mode");
+
+      themeToggle.textContent = isLight ? "🌙 Dark" : "☀️ Light";
+
+      themeToggle.setAttribute(
+        "aria-label",
+        isLight ? "Switch to dark mode" : "Switch to light mode"
+      );
+    });
+
+    // PROFILE PHOTO UPLOAD
+    const photoUpload = document.getElementById("photoUpload");
+    const profileImage = document.getElementById("profileImage");
+    const photoPlaceholder =
+      document.getElementById("photoPlaceholder");
+
+    let currentPhotoURL = null;
+
+    photoUpload.addEventListener("change", function (event) {
+      const file = event.target.files[0];
+
+      if (!file) return;
+
+      if (!file.type.startsWith("image/")) {
+        alert("Please select a valid image file.");
+        photoUpload.value = "";
+        return;
+      }
+
+      if (currentPhotoURL) {
+        URL.revokeObjectURL(currentPhotoURL);
+      }
+
+      currentPhotoURL = URL.createObjectURL(file);
+
+      profileImage.src = currentPhotoURL;
+      profileImage.style.display = "block";
+      photoPlaceholder.style.display = "none";
+    });
+
+    // SCROLL REVEAL ANIMATIONS
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+      revealElements.forEach(function (element) {
+        observer.observe(element);
+      });
+    } else {
+      revealElements.forEach(function (element) {
+        element.classList.add("visible");
+      });
+    }
+  </script>
+
+</body>
+</html>
+www.figma.com
+7:08 PM
+You sent
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servando Bebat III | Cybersecurity Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #080d18;
+      --surface: #101a2b;
+      --surface-2: #142238;
+      --text: #edf4ff;
+      --muted: #96a7c0;
+      --accent: #5bff9b;
+      --border: rgba(140, 170, 210, 0.19);
+      --shadow: rgba(0, 0, 0, 0.25);
+    }
+
+    body.light-mode {
+      --bg: #f2f6fb;
+      --surface: #ffffff;
+      --surface-2: #e7eef7;
+      --text: #102036;
+      --muted: #53647b;
+      --accent: #078b4b;
+      --border: rgba(30, 60, 90, 0.16);
+      --shadow: rgba(20, 40, 70, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition: background 0.3s, color 0.3s;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span,
+    .footer-content span {
+      color: var(--accent);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      padding: 9px 13px;
+      border-radius: 30px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+
+    /* HERO SECTION */
+
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 80px 0;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.07;
+      filter: blur(100px);
+      top: 10px;
+      right: -150px;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      align-items: center;
+      gap: 45px;
+      position: relative;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 5vw, 4.5rem);
+      line-height: 1.08;
+      letter-spacing: -3px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      color: var(--muted);
+      max-width: 570px;
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 17px;
+      border-radius: 8px;
+      font-size: 0.83rem;
+      font-weight: 800;
+      text-align: center;
+      transition: transform 0.25s, background 0.25s, border-color 0.25s, color 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #06130c;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* TWO FIGMA PROJECT COLUMNS */
+
+    .figma-section {
+      margin-top: 10px;
+      max-width: 650px;
+    }
+
+    .figma-section .eyebrow {
+      margin-bottom: 15px;
+    }
+
+    .figma-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .figma-card {
+      min-width: 0;
+      padding: 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .figma-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 35px var(--shadow);
+    }
+
+    .figma-number {
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .figma-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .figma-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      overflow-wrap: anywhere;
+    }
+
+    .figma-card p {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .figma-card .btn {
+      width: 100%;
+    }
+
+    /* PROFILE PHOTO */
+
+    .profile-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .profile-card {
+      width: 100%;
+      max-width: 320px;
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 25px 70px var(--shadow);
+      overflow: hidden;
+    }
+
+    .photo-frame {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface-2);
+      border: 1px dashed var(--accent);
+      border-radius: 12px;
+    }
+
+    .photo-frame img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block; /* Fixed: displayed immediately */
+    }
+
+    .photo-placeholder {
+      position: absolute;
+      inset: 0;
+      padding: 20px;
+      display: none; /* Fixed: hidden by default since photo is present */
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--muted);
+      background: var(--surface);
+      z-index: 2;
+    }
+
+    .photo-icon {
+      font-size: 3rem;
+      margin-bottom: 8px;
+    }
+
+    .photo-placeholder strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+
+    .upload-label {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 9px 13px;
+      border-radius: 6px;
+      color: #06130c;
+      background: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .upload-label:hover {
+      opacity: 0.85;
+    }
+
+    #photoUpload {
+      display: none;
+    }
+
+    .profile-caption {
+      padding-top: 17px;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
+
+    .profile-caption strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .profile-caption span {
+      color: var(--accent);
+      font-size: 0.8rem;
+    }
+
+    /* Floating upload trigger button to replace/change photo easily */
+    .change-photo-btn {
+      margin-top: 12px;
+      width: 100%;
+      padding: 8px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      display: block;
+      transition: border-color 0.2s;
+    }
+    .change-photo-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* GENERAL SECTIONS */
+
+    .content-section {
+      padding: 100px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 0.76rem;
+      letter-spacing: 2.5px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -1.5px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 38px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .about-copy {
+      color: var(--muted);
+    }
+
+    .about-copy p + p {
+      margin-top: 16px;
+    }
+
+    .info-card {
+      padding: 25px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .info-card h3 {
+      margin-bottom: 14px;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .status-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 18px;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .skill-card {
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .skill-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .skill-icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    /* CONTACT */
+
+    .contact-panel {
+      padding: 45px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .contact-panel .section-title {
+      margin-bottom: 12px;
+    }
+
+    .contact-panel p {
+      color: var(--muted);
+      max-width: 540px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: 0.8rem;
     }
 
     .footer-content {
@@ -563,7 +1793,7 @@
     .reveal {
       opacity: 0;
       transform: translateY(25px);
-      transition: opacity .7s ease, transform .7s ease;
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
     .reveal.visible {
@@ -571,11 +1801,11 @@
       transform: translateY(0);
     }
 
-    /* RESPONSIVE */
+    /* RESPONSIVE DESIGN */
 
     @media (max-width: 1000px) {
       .hero-grid {
-        grid-template-columns: 1.3fr .7fr;
+        grid-template-columns: 1fr 0.7fr;
         gap: 25px;
       }
 
@@ -643,12 +1873,12 @@
       }
 
       .nav-links a {
-        font-size: .7rem;
+        font-size: 0.7rem;
       }
 
       .theme-toggle {
         padding: 7px 10px;
-        font-size: .76rem;
+        font-size: 0.76rem;
       }
 
       .hero h1 {
@@ -685,8 +1915,8 @@
       *::before,
       *::after {
         scroll-behavior: auto !important;
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
       }
 
       .reveal {
@@ -700,7 +1930,6 @@
 <body>
 
   <!-- NAVIGATION -->
-
   <header>
     <nav class="container">
       <a class="logo" href="#home">SERVANDO<span>.</span></a>
@@ -722,8 +1951,7 @@
 
   <main>
 
-    <!-- HOME -->
-
+    <!-- HOME / HERO -->
     <section class="hero" id="home">
       <div class="container hero-grid">
 
@@ -747,8 +1975,7 @@
             </a>
           </div>
 
-          <!-- TWO FIGMA PROJECTS -->
-
+          <!-- FIGMA PROJECT CARDS -->
           <div class="figma-section">
             <p class="eyebrow">MY FIGMA PROJECTS</p>
 
@@ -791,31 +2018,42 @@
         <!-- PROFILE PHOTO SECTION -->
         <div class="profile-area reveal">
           <div class="profile-card">
+
             <div class="photo-frame">
-              <!-- Profile Picture (Make sure the image file is in the same folder as this HTML file) -->
-              <img id="profileImage" src="image/98c31885-1605-4040-9f2e-1958d66a5dea (1).jpg" alt="Servando Bebat III">
+              <img
+                id="profileImage"
+                src="c:\Users\Administrator\Downloads\98c31885-1605-4040-9f2e-1958d66a5dea (1).jpg"
+                alt="Servando Bebat III"
+              >
               
-              <!-- Placeholder if no image loads -->
               <div class="photo-placeholder" id="photoPlaceholder">
-                <div class="photo-icon">📷</div>
-                <strong>Add your photo</strong>
-                <span>Upload an image below</span>
+                <span class="photo-icon">👤</span>
+                <strong>Your Photo Here</strong>
+                <p>Upload your picture to personalize your portfolio.</p>
               </div>
             </div>
 
-            <!-- Upload input and button -->
-            <input type="file" id="photoUpload" accept="image/*">
-            <label for="photoUpload" class="change-photo-btn">Change Photo</label>
+            <label class="change-photo-btn" for="photoUpload">
+              Change Photo 📁
+            </label>
+
+            <input
+              type="file"
+              id="photoUpload"
+              accept="image/*">
 
             <div class="profile-caption">
               <strong>Servando Bebat III</strong>
-              <span>CYBERSECURITY</span>
+              <span>Cybersecurity Enthusiast</span>
             </div>
+
           </div>
         </div>
 
-    <!-- ABOUT -->
+      </div>
+    </section>
 
+    <!-- ABOUT -->
     <section class="content-section" id="about">
       <div class="container">
 
@@ -860,7 +2098,6 @@
     </section>
 
     <!-- SKILLS -->
-
     <section class="content-section" id="skills">
       <div class="container">
 
@@ -916,7 +2153,6 @@
     </section>
 
     <!-- CONTACT -->
-
     <section class="content-section" id="contact">
       <div class="container">
 
@@ -967,7 +2203,6 @@
   </main>
 
   <!-- FOOTER -->
-
   <footer>
     <div class="container footer-content">
       <p>© 2026 Servando Bebat III. All rights reserved.</p>
@@ -977,7 +2212,6 @@
 
   <script>
     // DARK MODE / LIGHT MODE
-
     const themeToggle = document.getElementById("themeToggle");
 
     themeToggle.addEventListener("click", function () {
@@ -994,32 +2228,12 @@
       );
     });
 
-    // PROFILE PHOTO
-
+    // PROFILE PHOTO UPLOAD
     const photoUpload = document.getElementById("photoUpload");
     const profileImage = document.getElementById("profileImage");
     const photoPlaceholder = document.getElementById("photoPlaceholder");
 
     let currentPhotoURL = null;
-
-    function showPhotoPlaceholder() {
-      profileImage.style.display = "none";
-      photoPlaceholder.style.display = "flex";
-    }
-
-    function showProfileImage() {
-      profileImage.style.display = "block";
-      photoPlaceholder.style.display = "none";
-    }
-
-    profileImage.addEventListener("load", showProfileImage);
-    profileImage.addEventListener("error", showPhotoPlaceholder);
-
-    if (profileImage.complete && profileImage.naturalWidth > 0) {
-      showProfileImage();
-    } else {
-      showPhotoPlaceholder();
-    }
 
     photoUpload.addEventListener("change", function (event) {
       const file = event.target.files[0];
@@ -1037,11 +2251,15 @@
       }
 
       currentPhotoURL = URL.createObjectURL(file);
+
       profileImage.src = currentPhotoURL;
+      profileImage.style.display = "block";
+      if (photoPlaceholder) {
+        photoPlaceholder.style.display = "none";
+      }
     });
 
     // SCROLL REVEAL ANIMATIONS
-
     const revealElements = document.querySelectorAll(".reveal");
 
     if ("IntersectionObserver" in window) {
@@ -1063,9 +2281,11 @@
         observer.observe(element);
       });
     } else {
-      revealElements.forEach(function (element) {
-        element.classList.add("visible");
-      });
+      if (revealElements.length > 0) {
+        revealElements.forEach(function (element) {
+          element.classList.add("visible");
+        });
+      }
     }
   </script>
 
